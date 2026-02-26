@@ -57,4 +57,28 @@ public class Lista {
     public void limpar () {
         qtdeElementos = 0;
     }
+
+    public void removerPosicao(int posicao) {
+        if (posicao>qtdeElementos) {
+            System.err.println("Posição não existe");
+        }
+        for (int i=posicao; i<qtdeElementos; i ++) {
+            if (i+1<qtdeElementos) {
+                elementos[i] = elementos [i+1];
+            }
+        }
+        qtdeElementos--;
+    }
+
+    public void inserirPosicao(int elemento, int posicao) {
+        if (posicao>qtdeElementos) {
+            System.err.println("Posição não existe");
+        }
+        qtdeElementos++;
+        for (int i=qtdeElementos; i>posicao; i --) {
+            elementos[i] = elementos[i-1];
+        }
+        elementos[posicao] = elemento;
+
+    }
 }
